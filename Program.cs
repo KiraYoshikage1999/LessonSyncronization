@@ -220,21 +220,25 @@ namespace LessonSyncronization
             return coffeeCup;
         }
 
-        public static async Task FryEggsOrBecon(int Choose)
+        public static async Task<Food> FryEggsOrBecon(int Choose)
         {
             if (Choose == 0)
             {
                 Console.WriteLine("Frying three eggs");
                 await Task.Delay(3000);
                 Console.WriteLine("Eggs Cooked");
+                EGGS eGGS = new EGGS();
+                return eGGS;
             }
             else if (Choose == 1)
             {
                 Console.WriteLine("Frying two Becon");
                 await Task.Delay(4000);
                 Console.WriteLine("Becon cooked");
+                Becon becon = new Becon();
+                return becon;
             }
-            else { Console.WriteLine("Error try again"); }
+            else { Console.WriteLine("Error try again"); return null; }
         }
 
         public static async Task CookingJamSandviches()
